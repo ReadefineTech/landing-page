@@ -1,5 +1,4 @@
 .init-box-lang {
-  position: absolute;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -14,10 +13,14 @@
 }
 
 .display-all{
+  margin: 0;
+  padding: 0;
+  flex-basis: 0;
   width: 100vw;
   height: 100%;
   /* change to 100% */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -25,7 +28,8 @@
     to bottom,
     rgba(106, 107, 199, 255),
     rgba(97, 80, 135, 255)
-  )
+  );
+  overflow: hidden;
 }
 
 .readefine-logo {
@@ -132,21 +136,37 @@
 }
 
 .first-image-box{
+  padding-top: 2.5rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: inherit;
 }
 
 .text-body{
   color: white;
   width: 40%;
+  animation-name: text-color-change;
+  animation-duration: 4s;
 }
 
 .phone-image{
   max-width: 25%;
   height: auto;
   width: auto;
+}
+
+@keyframes text-color-change {
+  from {
+    color: transparent;
+  } to {
+    color: white;
+  }
+}
+
+.none-none{
+  display: none;
 }
 
 @media only screen and (max-width: 1200px){
