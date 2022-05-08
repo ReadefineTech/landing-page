@@ -2,21 +2,20 @@ import React from "react";
 import './p.css';
 import Logo from '../images/readefine_logo.png';
 import { useState } from "react";
-import BgLang from '../images/bg-lang-pic.png';
+import languages from './LanguageObject';
 
-    let bulgarianFlag = false;
-    let englishFlag = false;
-    let italianFlag = false;
-    let frenchFlag = false;
+    // let bulgarianFlag = false;
+    // let englishFlag = false;
+    // let italianFlag = false;
+    // let frenchFlag = false;
     let numClickedLangs = 0;
 
 const LanguageChooser = () => {
+
     const [clickedLangBG, changeClickedStateBG] = useState("box-for-lang");
     const [clickedLangEN, changeClickedStateEN] = useState("box-for-lang");
     const [clickedLangIT, changeClickedStateIT] = useState("box-for-lang");
     const [clickedLangFR, changeClickedStateFR] = useState("box-for-lang");
-
-    
 
     let checkState = (clickedLang) =>{
         if(clickedLang === "box-for-lang"){
@@ -34,7 +33,10 @@ const LanguageChooser = () => {
         console.log(numClickedLangs);
         if(numClickedLangs == 2){
             // change window open to rerouting when page is created
-            window.open("https://facebook.com", "_self");
+            setTimeout(()=>{
+                window.open("display", "_self");
+            }, "1500");
+            // window.open("display", "_self");
         }
     }
 
@@ -45,45 +47,45 @@ const LanguageChooser = () => {
             <div className="lang-box">
                 <div className={clickedLangBG} onClick={()=>{
                     changeClickedStateBG(checkState(clickedLangBG))
-                    if(bulgarianFlag){
+                    if(languages.bulgarianFlag){
                         numClickedLangs--;
                     } else {
                         numClickedLangs++;
                     }
-                    bulgarianFlag = !bulgarianFlag;
+                    languages.bulgarianFlag = !languages.bulgarianFlag;
                     checkTwoLangsClicked();
                     }}>
                     <p className="lang-color">BG</p>
                 </div>
             <div className={clickedLangEN} onClick={()=>{changeClickedStateEN(checkState(clickedLangEN))
-                    if(englishFlag){
+                    if(languages.englishFlag){
                         numClickedLangs--;
                     } else {
                         numClickedLangs++;
                     }
-                    englishFlag = !englishFlag;
+                    languages.englishFlag = !languages.englishFlag;
                     checkTwoLangsClicked();
                     }}>
                     <p className="lang-color">EN</p>
                 </div>
                 <div className={clickedLangFR} onClick={()=>{changeClickedStateFR(checkState(clickedLangFR))
-                    if(frenchFlag){
+                    if(languages.frenchFlag){
                         numClickedLangs--;
                     } else {
                         numClickedLangs++;
                     }
-                    frenchFlag = !frenchFlag;
+                    languages.frenchFlag = !languages.frenchFlag;
                     checkTwoLangsClicked();
                 }}>
                     <p className="lang-color">FR</p>
                 </div>
                 <div className={clickedLangIT} onClick={()=>{changeClickedStateIT(checkState(clickedLangIT))
-                    if(italianFlag){
+                    if(languages.italianFlag){
                         numClickedLangs--;
                     } else {
                         numClickedLangs++;
                     }
-                    italianFlag = !italianFlag;
+                    languages.italianFlag = !languages.italianFlag;
                     checkTwoLangsClicked();
                 }}>
                     <p className="lang-color">IT</p>
