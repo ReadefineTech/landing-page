@@ -215,3 +215,49 @@
     width: 80%;
   }
 }
+
+.email-retriever{
+  margin-top: 5rem;
+  width: 60%;
+}
+
+.bg-email{
+  background-color: white !important;
+  color: black !important;
+}
+
+.form-email{
+  color: white;
+}
+
+.error-handler{
+  color: white !important;
+}
+
+.error-handler-req{
+  background-color: yellowgreen !important;
+}
+
+.email-section{
+  width: 60%;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.email-section h3{
+  color: white;
+  text-align: center;
+  font-size: x-large;
+}
+
+.socials{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 5rem;
+}
+
+.icon{
+  color: white;
+  height: 75px;
+  width: 75px;
+}

@@ -2,6 +2,8 @@ import React from "react";
 import { EventHandler } from "react";
 import iPhone from "../images/iphone.png";
 import { useMediaQuery } from "react-responsive";
+import EmailRetriever from "./EmailRetriever";
+import {AiOutlineFacebook, AiOutlineLinkedin} from "react-icons/ai";
 
 const LanguageDisplay = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 550px)" });
@@ -67,6 +69,14 @@ const LanguageDisplay = () => {
           </p>
         </div>
         <img src={iPhone} className={mobilePhone}></img>
+      </div>
+      <div className="email-section">
+        <h3>Sign up if you want to be hearing more interesting news from us!</h3>
+      <EmailRetriever className="email-retriever"></EmailRetriever>
+      </div>
+      <div className="socials">
+        <AiOutlineFacebook className="icon"></AiOutlineFacebook>
+        <AiOutlineLinkedin className="icon"></AiOutlineLinkedin>
       </div>
     </div>
   );
