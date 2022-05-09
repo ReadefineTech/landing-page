@@ -1,3 +1,4 @@
+
 .init-box-lang {
   width: 100vw;
   height: 100vh;
@@ -10,13 +11,13 @@
     rgba(106, 107, 199, 255),
     rgba(97, 80, 135, 255)
   );
+  font-family: "Open Sans",sans-serif;
 }
 
 .display-all{
   margin: 0;
   padding: 0;
   flex-basis: 0;
-  width: 100vw;
   height: 100%;
   /* change to 100% */
   display: flex;
@@ -29,12 +30,15 @@
     rgba(106, 107, 199, 255),
     rgba(97, 80, 135, 255)
   );
+  font-family: "Open Sans", sans-serif;
+  overflow-x:hidden;
 }
 
 .readefine-logo {
   border-radius: 5rem;
   width: 200px;
   height: 200px;
+  margin-bottom: 1rem;
 }
 
 .choose-lang-header {
@@ -42,13 +46,14 @@
 }
 
 .lang-box {
+  padding-top: 0.5rem;
   display: flex;
   justify-content: space-around;
 }
 .box-for-lang {
-  margin: 2.5px;
-  width: 50px;
-  height: 50px;
+  margin: 3.5px;
+  width: 55px;
+  height: 55px;
   border-style: solid;
   border-width: 5px;
   border-radius: 1rem;
@@ -66,8 +71,8 @@
 
 .box-for-lang-clicked {
     margin: 2.5px;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-style: solid;
     border-width: 5px;
     border-radius: 1rem;
@@ -82,8 +87,8 @@
 
 .box-for-lang-clicked-back {
     margin: 2.5px;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-style: solid;
     border-width: 5px;
     border-radius: 1rem;
@@ -100,8 +105,8 @@
 @keyframes color-change {
   from {
     margin: 2.5px;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-style: solid;
     border-width: 5px;
     border-radius: 1rem;
@@ -119,8 +124,8 @@
 @keyframes color-change-back {
   from {
     margin: 2.5px;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-style: solid;
     border-width: 5px;
     border-radius: 1rem;

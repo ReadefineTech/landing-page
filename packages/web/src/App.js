@@ -2,11 +2,8 @@ import './App.css';
 import LanguageChooser from './components/LanguageChooser';
 import LanguageDisplay from './components/LanguageDisplay';
 import {Routes, Route} from 'react-router-dom';
-
-// window.$bulgarianLanguage = false;
-// window.$englishLanguage = false;
-// window.$italianLanguage = false;
-// window.$frenchLanguage = false;
+// import '@fontsource/poppins';
+import '@fontsource/open-sans'
 
 function App() {
   return (
