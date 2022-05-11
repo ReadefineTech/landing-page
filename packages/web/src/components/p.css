@@ -34,6 +34,27 @@
   overflow-x:hidden;
 }
 
+.display-all-spinner{
+  margin: 0;
+  padding: 0;
+  flex-basis: 0;
+  height: 100vh;
+  width: 100vw;
+  /* change to 100% */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(106, 107, 199, 255),
+    rgba(97, 80, 135, 255)
+  );
+  font-family: "Open Sans", sans-serif;
+  overflow-x:hidden;
+}
+
 .readefine-logo {
   border-radius: 5rem;
   width: 200px;

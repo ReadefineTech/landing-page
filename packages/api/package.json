@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Michael Bozhilov and Nikolay Ninov",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@loadable/component": "^5.15.2",
+    "framer-motion": "^6.3.3"
+  }
 }

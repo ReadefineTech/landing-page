@@ -8,6 +8,7 @@
     "@emotion/styled": "^11.8.1",
     "@fontsource/open-sans": "^4.5.8",
     "@fontsource/poppins": "^4.5.8",
+    "@loadable/component": "^5.15.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",

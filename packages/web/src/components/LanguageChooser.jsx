@@ -3,6 +3,7 @@ import './p.css';
 import Logo from '../images/readefine_logo.png';
 import { useState } from "react";
 import languages from './LanguageObject';
+import { motion } from "framer-motion";
 
     // let bulgarianFlag = false;
     // let englishFlag = false;
@@ -47,6 +48,10 @@ const LanguageChooser = () => {
     }
 
     return (
+        <motion.div
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}>
         <div className="init-box-lang">
             <img className="readefine-logo" src={Logo}></img>
             <h3 className="choose-lang-header">Choose two languages:</h3>
@@ -82,6 +87,7 @@ const LanguageChooser = () => {
                 </div>
             </div>
         </div>
+        </motion.div>
     )
 }
 
