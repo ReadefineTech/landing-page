@@ -83,11 +83,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
 }
 
 .lang-color {
   margin: 0;
   font-size: x-large;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
 }
 
 .box-for-lang-clicked {
@@ -104,6 +112,7 @@
     align-items: center;
     animation-name: color-change;
     animation-duration: 1s;
+
 }
 
 .box-for-lang-clicked-back {
