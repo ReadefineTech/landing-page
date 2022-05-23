@@ -1,13 +1,13 @@
 import nodemailer from 'nodemailer';
-import { Request, Response } from 'express';
+import {} from 'dotenv/config';
 // import SignUp from '../models/signUp';
 
 // add new controller for sign up
 
-const hostname = process.env.APPSETTING_STMP_HOST;
+const hostname = process.env.APPSETTING_SMTP_HOST;
 const username = process.env.APPSETTING_SMTP_USER;
 const pswd = process.env.APPSETTING_SMTP_PASS;
-const emailPort = Number(process.env.APPSETTING_SMTP_PORT) | 587;
+const emailPort = Number(process.env.APPSETTING_SMTP_PORT) | 465;
 
 const emailMessage =
 `
@@ -35,65 +35,43 @@ const emailMessage =
 
 // transform from ts to js
 
-// async function sendEmail(emailTo: string, subject: string, htmlMessage: string) {
-//   const transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     host: hostname,
-//     port: emailPort,
-//     secure: true,
-//     requireTLS: true,
-//     auth: {
-//       user: username,
-//       pass: pswd
-//     },
-//     logger: true
-//   });
+async function sendEmail(emailTo, subject, htmlMessage) {
+  const transporter = nodemailer.createTransport({
+    host: hostname,
+    port: emailPort,
+    secure: true,
+    requireTLS: true,
+    auth: {
+      user: username,
+      pass: pswd
+    },
+    logger: true
+  });
+  console.log(hostname, username, pswd, emailTo)
 
-//   await transporter.sendMail({
-//     from: username,
-//     to: [emailTo, 'thehubaubg@gmail.com'],
-//     subject: subject,
-//     text: '',
-//     html: htmlMessage,
-//   }).then((msg) => console.log(msg)).catch(err => console.log(err));
+  return transporter.sendMail({
+    from: `Readefine <${username}>`,
+    to: [emailTo, username],
+    subject: subject,
+    text: '',
+    html: htmlMessage,
+    headers: {'x-myheader':'test header'},
+  })
 
-// }
+}
 
-// export const createSignUp = async (req: Request, res: Response) => {
+export const createSignUp = async (req, res) => {
 //   res.header('Access-Control-Allow-Origin', '*');
-//   const signUpData = req.body;
 
-//   const s = new SignUp(signUpData);
-//   await s
-//     .validate() // run validate
-//     .then(async () => {
-//       // if reached here, then validation was fine, attempt to save
-//       SignUp.findOne({ email: signUpData.email }).exec((err, su) => {
-//         // callback
-//         // check if findOne failed
-//         if (err) return res.status(500).json({ message: err });
-//         // check if a signup was found
-//         if (su) return res.status(409).json({ message: 'This email already exists' });
-
-//         s.save((err) => {
-//           // callback in case save fails, in which case log and return 500
-//           if (err) return res.status(500).json({ message: err });
-//         });
-
-//         sendEmail(signUpData.email, 'Registration for HackAUBG 4.0', emailMessage);
-
-//         return res.status(201).json({
-//           // if reached here, then save was fine, return 201 CREATED
-//           signup: s
-//         });
-//       });
-//     })
-//     .catch((err) => {
-//       // catch the failed validate, which is a 400 Bad request
-//       console.log(err);
-
-//       return res.status(400).json({
-//         message: err
-//       });
-//     });
-// };
+  const signUpData = req.body;
+  console.log(signUpData)
+    
+  sendEmail(signUpData.email, 'Placeholder text', emailMessage).then((msg) => {
+      console.log(msg)
+      return res.status(200).json(msg)
+  }).catch(err => {
+      console.log(err)
+      return res.status(400).json(err)
+    });
+  
+};
