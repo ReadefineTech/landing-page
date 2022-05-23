@@ -111,7 +111,7 @@
     justify-content: center;
     align-items: center;
     animation-name: color-change;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 
 }
 
@@ -128,7 +128,7 @@
     justify-content: center;
     align-items: center;
     animation-name: color-change-back;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 
 }
 
