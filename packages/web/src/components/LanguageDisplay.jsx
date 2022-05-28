@@ -1,42 +1,15 @@
 import React from "react";
 import { EventHandler } from "react";
-import iPhone from "../images/iphone.png";
+import iPhone from "../images/29.png";
 import { useMediaQuery } from "react-responsive";
 import EmailRetriever from "./EmailRetriever";
 import { AiOutlineFacebook, AiOutlineLinkedin } from "react-icons/ai";
 import { motion } from "framer-motion";
-// import { useState, useEffect } from "react";
-// import { Spinner } from "@chakra-ui/react";
 
 const LanguageDisplay = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 550px)" });
   let mobilePhone = isMobile ? "phone-image" : "none-none";
   let desktopPhone = isMobile ? "none-none" : "phone-image";
-
-  // const [isLoading, setLoading] = useState(true);
-
-  // function fakeRequest() {
-  //   return new Promise((resolve) => setTimeout(() => resolve(), 1500));
-  // }
-
-  // useEffect(() => {
-  //   fakeRequest().then(() => {
-  //     const el = document.querySelector(".loader-container");
-  //     if (el) {
-  //       console.log(el);
-  //       el.remove();
-  //       setLoading(!isLoading);
-  //     }
-  //   });
-  // }, []);
-
-  // if (isLoading) {
-  //   return (
-  //     <div className="display-all-spinner">
-  //       <Spinner></Spinner>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="display-all">
