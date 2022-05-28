@@ -50,7 +50,7 @@ const LanguageDisplay = () => {
       >
         <div className="first-image-box">
           <div className="text-body">
-            <h3>Redefine the way you read books!</h3>
+            <h3>Redefine the way you read books</h3>
             <p>
               Powered by deep-tech Artificial Intelligence, Readefine is a first
               of its kind mobile aplication which provides enthusiastic readers
@@ -66,24 +66,21 @@ const LanguageDisplay = () => {
         <div className="first-image-box">
           <img src={iPhone} className={desktopPhone}></img>
           <div className="text-body">
-            <h3>Open Source and licensed books in one library!</h3>
+            <h3>Open Source and licensed books in one library</h3>
             <p>
               Growing in size, our library will provide even the most exotic
               readers with an inspiring reading. Our goal is to have all of our
-              books available on as many different languages.
+              books available on as many different languages as possible.
             </p>
           </div>
           <img src={iPhone} className={mobilePhone}></img>
         </div>
         <div className="first-image-box">
           <div className="text-body">
-            <h3>Building the book</h3>
+            <h3>Building the custom-tailored experiencet </h3>
             <p>
-              Readefine provides users with the possibility of rebuilding a book
-              with different parts in different languages. - Можеш да избираш
-              ниво на трудност - Можеш да избираш как да са разделени -
-              параграфи, изречения - Речник с думи, които се добавят на местата
-              на директни синоними, за да можеш да научаваш думите, които искаш
+                Readefine lets curious readers choose what languages to be included in the book and their level of difficulty. On another note, there is always
+                the possibility of putting the words you want to learn in the dictionary and the application will generate the contextual parts with the words you want learn.
             </p>
           </div>
           <img src={iPhone} className="phone-image"></img>
@@ -91,14 +88,9 @@ const LanguageDisplay = () => {
         <div className="first-image-box">
           <img src={iPhone} className={desktopPhone}></img>
           <div className="text-body">
-            <h3>Readefine the way you are reading books!</h3>
+            <h3>Tracking goals</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur, ipsum quis corrupti nemo nihil dolorem blanditiis
-              <br></br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consequatur, voluptatibus?<br></br>Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Similique necessitatibus perferendis
-              qui nam tempore quae dolorem velit harum totam. Earum.
+            The goal metrics provide readers with a structured way to track and visualize their progress throughout their journey.
             </p>
           </div>
           <img src={iPhone} className={mobilePhone}></img>
