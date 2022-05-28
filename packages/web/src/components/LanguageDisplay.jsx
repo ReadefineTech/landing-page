@@ -5,12 +5,17 @@ import { useMediaQuery } from "react-responsive";
 import EmailRetriever from "./EmailRetriever";
 import { AiOutlineFacebook, AiOutlineLinkedin } from "react-icons/ai";
 import { motion } from "framer-motion";
+// import languages from "./LanguageObject";
 
-const LanguageDisplay = () => {
+const LanguageDisplay = ({displayLangs,langOptions}) => {
   const isMobile = useMediaQuery({ query: "(max-width: 550px)" });
   let mobilePhone = isMobile ? "phone-image" : "none-none";
   let desktopPhone = isMobile ? "none-none" : "phone-image";
-
+  console.log(displayLangs())
+  // if(displayLangs().size==2)
+  // {
+  //   langOptions.clear();
+  // }
   return (
     <div className="display-all">
       <motion.div

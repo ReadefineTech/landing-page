@@ -5,22 +5,24 @@ import LanguageDisplay from './components/LanguageDisplay';
 import loadable from '@loadable/component';
 import { Spinner } from '@chakra-ui/react'
 
-const Loader = loadable(()=>import(Spinner));
+// const Loader = loadable(()=>import(Spinner));
 
-const LangChoose = loadable(() => import("./components/LanguageChooser"),{
-  fallback: <Spinner></Spinner>
-});
+// const LangChoose = loadable(() => import("./components/LanguageChooser"),{
+//   fallback: <Spinner></Spinner>
+// });
 
-const LangDisplay = loadable(() => import("./components/LanguageDisplay"),{
-  fallback: <Spinner></Spinner>
-});
+// const LangDisplay = loadable(() => import("./components/LanguageDisplay"),{
+//   fallback: <Spinner></Spinner>
+// });
 
-function Routers() {
+function Routers({langOptions}) {
+
+
   return (
     <Routes>
-      <Route path='/' element={<LangChoose></LangChoose>}>
+      <Route path='/' element={<LanguageChooser langOptions={langOptions}></LanguageChooser>}>
       </Route>
-      <Route path="display" element={<LangDisplay></LangDisplay>}></Route>
+      <Route path="display" element={<LanguageDisplay langOptions={langOptions}></LanguageDisplay>}></Route>
     </Routes>
   );
 }
