@@ -52,7 +52,13 @@ const LanguageDisplay = () => {
           <div className="text-body">
             <h3>Redefine the way you read books!</h3>
             <p>
-              Powered by deep-tech Artificial Intelligence, Readefine is a first of its kind mobile aplication which provides enthusiastic readers with the opportunity of reading their favourite book while learning a new language or polishing up an old one. It achieves that by building custom-tailored books and applying the most effective scientifically researched methodologies for studying such as contextual learning.
+              Powered by deep-tech Artificial Intelligence, Readefine is a first
+              of its kind mobile aplication which provides enthusiastic readers
+              with the opportunity of reading their favourite book while
+              learning a new language or polishing up an old one. It achieves
+              that by building custom-tailored books and applying the most
+              effective scientifically researched contextual learning
+              methodologies.
             </p>
           </div>
           <img src={iPhone} className="phone-image"></img>
@@ -62,8 +68,9 @@ const LanguageDisplay = () => {
           <div className="text-body">
             <h3>Open Source and licensed books in one library!</h3>
             <p>
-    Growing in size, our library will provide even the most exotic reader with an inspiring reading. Our goal is to have all of our books available on many different languages and let the users guide their own adventure in the world of learning by letting them customize their
-      experience.
+              Growing in size, our library will provide even the most exotic
+              readers with an inspiring reading. Our goal is to have all of our
+              books available on as many different languages.
             </p>
           </div>
           <img src={iPhone} className={mobilePhone}></img>
@@ -72,10 +79,11 @@ const LanguageDisplay = () => {
           <div className="text-body">
             <h3>Building the book</h3>
             <p>
-              Readefine provides users with the possibility of rebuilding a book with different parts in different languages.
-                - Можеш да избираш ниво на трудност
-                - Можеш да избираш как да са разделени - параграфи, изречения
-                - Речник с думи, които се добавят на местата на директни синоними, за да можеш да научаваш думите, които искаш
+              Readefine provides users with the possibility of rebuilding a book
+              with different parts in different languages. - Можеш да избираш
+              ниво на трудност - Можеш да избираш как да са разделени -
+              параграфи, изречения - Речник с думи, които се добавят на местата
+              на директни синоними, за да можеш да научаваш думите, които искаш
             </p>
           </div>
           <img src={iPhone} className="phone-image"></img>
