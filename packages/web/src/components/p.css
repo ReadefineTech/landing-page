@@ -183,6 +183,7 @@
   width: 40%;
   animation-name: text-color-change;
   animation-duration: 4s;
+  font-size: x-large;
 }
 
 .phone-image{
@@ -192,7 +193,8 @@
 }
 
 .text-body h3{
-  font-size: xx-large;
+  font-size: xxx-large;
+  font-weight: 600;
 }
 
 @keyframes text-color-change {
@@ -207,18 +209,34 @@
   display: none;
 }
 
-@media only screen and (max-width: 1200px){
-  .phone-image{
-    max-width: 30%;
-  }
+@media only screen and (max-width: 1400px){
   .text-body{
-    width: 35%;
+    font-size: x-large;
+  }
+  .text-body h3{
+    font-size: xx-large;
   }
 }
+
+@media only screen and (max-width: 1200px){
+  .text-body{
+    font-size: x-large;
+  }
+  .text-body h3{
+    font-size: xx-large;
+  }
+}
+
 
 @media only screen and (max-width: 1000px){
   .phone-image{
     max-width: 35%;
+  }
+  .text-body{
+    font-size: large;
+  }
+  .text-body h3{
+    font-size: x-large;
   }
 }
 
@@ -228,6 +246,9 @@
   }
   .first-image-box{
     padding-top: 0rem;
+  }
+  .text-body{
+    font-size: medium;
   }
 }
 
@@ -243,6 +264,10 @@
     margin-top: 5rem;
     margin-bottom: 2.5rem;
     width: 80%;
+    font-size: medium;
+  }
+  .text-body h3{
+    font-size: x-large;
   }
 }
 
