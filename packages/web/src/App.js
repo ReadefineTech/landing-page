@@ -16,7 +16,7 @@ function App() {
     remove: (lang) =>{ setLanguages(prev=> new Set([...prev].filter(x=>x!==lang)))},
     clear: () => setLanguages(new Set()),
   };
-
+ 
   const displayLangs = ()=> languages;
   return (
     <AnimatePresence>
