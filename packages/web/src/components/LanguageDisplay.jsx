@@ -83,7 +83,9 @@ const LanguageDisplay = ({displayLangs,langOptions}) => {
               methodologies.
             </p>
           </div>
-          <img src={gif_path} className="phone-image"></img>
+          <img src={gif_path} className="phone-image" onClick={()=>{
+            console.log(gif_path)
+          }}></img>
         </div>
         <div className="first-image-box">
           <img src={openLibrary} className={desktopPhone}></img>
