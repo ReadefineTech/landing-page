@@ -5,7 +5,7 @@ import { emailRoutes } from './v1/signUp/signUp.js';
 
 
 const app = express();
-const PORT = process.env.APPSETTING_PORT || 3000;
+const PORT = process.env.APPSETTING_PORT || 8080;
 
 app.disable('x-powered-by');
 app.use(cors());

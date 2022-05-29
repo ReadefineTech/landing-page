@@ -275,6 +275,10 @@
 }
 
 .error-handler{
+  color: greenyellow !important;
+}
+
+.error-handler-purple{
   color: white !important;
 }
 
@@ -304,4 +308,10 @@
   color: white;
   height: 75px;
   width: 75px;
+}
+
+.flex-space-around{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

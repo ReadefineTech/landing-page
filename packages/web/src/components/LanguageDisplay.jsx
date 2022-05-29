@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import EmailRetriever from "./EmailRetriever";
 import { AiOutlineFacebook, AiOutlineLinkedin } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { Button } from "@chakra-ui/react";
 // import languages from "./LanguageObject";
 
 const LanguageDisplay = ({displayLangs,langOptions}) => {

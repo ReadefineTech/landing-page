@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import {createSignUp} from '../../controllers/signUpController.js';
+import {createSignUp} from '../../controllers/SignUpController.js';
 
 export const emailRoutes = Router();
 
