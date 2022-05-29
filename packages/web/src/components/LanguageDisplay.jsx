@@ -9,7 +9,10 @@ import { motion } from "framer-motion";
 import { Button } from "@chakra-ui/react";
 // import languages from "./LanguageObject";
 
-const buildPath= (s,suff) => `/images/${s}_${suff}.png`;
+const buildPath= (s,suff) => `/images/${s}_${suff}.png`; 
+// for menu image
+
+const buildPathForGif = (s) => `/images/${s}_gif.gif`;
 
 const buildImage=(langSet)=>{
   // console.log(langSet);
@@ -40,7 +43,8 @@ const LanguageDisplay = ({displayLangs,langOptions}) => {
   let mobilePhone = isMobile ? "phone-image" : "none-none";
   let desktopPhone = isMobile ? "none-none" : "phone-image";
   let path = buildImage(displayLangs());
-  let paths = [buildPath(path,'snt'),buildPath(path,'pgp')];
+  // let paths = [buildPath(path,'gif')];
+  let gif_path = buildPathForGif(path);
 
   useEffect(()=>{
     const int = setInterval(()=>{
@@ -79,7 +83,7 @@ const LanguageDisplay = ({displayLangs,langOptions}) => {
               methodologies.
             </p>
           </div>
-          <img src={paths[cnt%2]} className="phone-image"></img>
+          <img src={gif_path} className="phone-image"></img>
         </div>
         <div className="first-image-box">
           <img src={openLibrary} className={desktopPhone}></img>
