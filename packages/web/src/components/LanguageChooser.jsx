@@ -6,11 +6,11 @@ import languages from './LanguageObject';
 import { motion } from "framer-motion";
 import { BrowserRouter, useNavigate} from "react-router-dom";
 
-    // let bulgarianFlag = false;
-    // let englishFlag = false;
-    // let italianFlag = false;
-    // let frenchFlag = false;
-    // let numClickedLangs = 0;
+// let bulgarianFlag = false;
+// let englishFlag = false;
+// let italianFlag = false;
+// let frenchFlag = false;
+// let numClickedLangs = 0;
 
 const LanguageChooser = ({displayLangs,langOptions}) => {
     let navigate = useNavigate();
@@ -19,19 +19,31 @@ const LanguageChooser = ({displayLangs,langOptions}) => {
     const [clickedLangIT, changeClickedStateIT] = useState("box-for-lang");
     const [clickedLangFR, changeClickedStateFR] = useState("box-for-lang");
     const [cnt, setCnt] = useState(0);
+    // const [logged, setLogged] = useState(false);
 
+    // if(logged)
+    // {
+    //     setLogged(false);
+    // }
+
+    // console.log('Component ',cnt, displayLangs());
     let checkTwoLangsClicked = () => {
-        console.log(cnt)
-        if(displayLangs().size==2 || cnt === 1){
+        // console.log('checkTwoLangsClicked ',cnt, displayLangs())
+        if(cnt==2){
+            // setLogged(true);
             setTimeout(()=>{
                 navigate('/display');
             }, "1000"); // 1s timeout
         }
     }
 
+    checkTwoLangsClicked();
+
     let checkState = (clickedLang, lang) =>{
-        if(displayLangs().size===2 || cnt===1){
-            langOptions.clear();
+        // console.log('checkState ',cnt, displayLangs());
+        if(displayLangs().size===2){
+            displayLangs().clear();
+            setCnt(0);
         }
         if(displayLangs().has(lang))
         {
@@ -45,16 +57,16 @@ const LanguageChooser = ({displayLangs,langOptions}) => {
         if(clickedLang === "box-for-lang"){
             // langOptions.add(lang);
             // setCnt(cnt+1);
-            console.log('added '+lang)
-            console.log(langOptions.display())
+            // console.log('added '+lang)
+            // console.log(langOptions.display())
             return "box-for-lang-clicked";
         } 
         else {
             if(clickedLang === "box-for-lang-clicked"){
                 // langOptions.remove(lang);
                 // setCnt(cnt-1);
-                console.log('removed '+lang)
-                console.log(langOptions.display())
+                // console.log('removed '+lang)
+                // console.log(langOptions.display())
                 return "box-for-lang-clicked-back";
             } else {
                 return "box-for-lang-clicked";
@@ -82,30 +94,30 @@ const LanguageChooser = ({displayLangs,langOptions}) => {
             <div className="lang-box">
                 <div className={clickedLangBG} onClick={()=>{
                     changeClickedStateBG(checkState(clickedLangBG, "bg"));
-                    // increaseFlags(languages.bulgarianFlag);
-                    languages.bulgarianFlag = !languages.bulgarianFlag;
-                    // checkTwoLangsClicked();
+                    // increaseFlags(bulgarianFlag);
+                    // bulgarianFlag = !bulgarianFlag;
+                    checkTwoLangsClicked();
                     }}>
                     <p className="lang-color">BG</p>
                 </div>
             <div className={clickedLangEN} onClick={()=>{changeClickedStateEN(checkState(clickedLangEN, "en"));
-                    // increaseFlags(languages.englishFlag);
-                    languages.englishFlag = !languages.englishFlag;
-                    // checkTwoLangsClicked();
+                    // increaseFlags(englishFlag);
+                    // englishFlag = !englishFlag;
+                    checkTwoLangsClicked();
                     }}>
                     <p className="lang-color">EN</p>
                 </div>
                 <div className={clickedLangFR} onClick={()=>{changeClickedStateFR(checkState(clickedLangFR, "fr"));
-                    // increaseFlags(languages.frenchFlag);
-                    languages.frenchFlag = !languages.frenchFlag;
-                    // checkTwoLangsClicked();
+                    // increaseFlags(frenchFlag);
+                    // frenchFlag = !frenchFlag;
+                    checkTwoLangsClicked();
                 }}>
                     <p className="lang-color">FR</p>
                 </div>
                 <div className={clickedLangIT} onClick={()=>{changeClickedStateIT(checkState(clickedLangIT, "de"));
-                    // increaseFlags(languages.italianFlag);
-                    languages.italianFlag = !languages.italianFlag;
-                    // checkTwoLangsClicked();
+                    // increaseFlags(italianFlag);
+                    // italianFlag = !italianFlag;
+                    checkTwoLangsClicked();
                 }}>
                     <p className="lang-color">DE</p>
                 </div>

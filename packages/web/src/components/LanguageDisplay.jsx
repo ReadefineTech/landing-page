@@ -9,19 +9,22 @@ import { motion } from "framer-motion";
 import { Button } from "@chakra-ui/react";
 // import languages from "./LanguageObject";
 
-const buildPath= (s,suff) => {console.log(`/images/${s}_${suff}.png`); return `/images/${s}_${suff}.png`};
+const buildPath= (s,suff) => `/images/${s}_${suff}.png`;
 
 const buildImage=(langSet)=>{
+  // console.log(langSet);
+  let copy = new Set(langSet);
   if(langSet.has('en'))
   {
-    langSet.delete('en');
-    let [lang] = langSet;
+
+    copy.delete('en');
+    let [lang] = copy;
 
     return `en_${lang}`;
   }
   else if(langSet.has('de')){
-    langSet.delete('de');
-    let [lang] = langSet;
+    copy.delete('de');
+    let [lang] = copy;
 
     return `de_${lang}`;
 
@@ -46,6 +49,7 @@ const LanguageDisplay = ({displayLangs,langOptions}) => {
 
     return () => {clearInterval(int)};
   },[]);
+
   // if(displayLangs().size==2)
   // {
   //   langOptions.clear();
