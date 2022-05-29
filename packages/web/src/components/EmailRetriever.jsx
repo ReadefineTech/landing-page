@@ -21,7 +21,7 @@ const EmailRetriever = () => {
       })
     }
 
-    const isError = input === ''
+    const isNotError = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)
 
     return (
       <FormControl >
@@ -34,14 +34,20 @@ const EmailRetriever = () => {
           className="bg-email"
         />
         <div className="flex-space-around">
-          {!isError? (<FormHelperText className="error-handler">
+          {isNotError? (<FormHelperText className="error-handler">
             Enter the email you'd like to receive the newsletter on.
           </FormHelperText>) :
           <FormHelperText className="error-handler-purple">
             Enter the email you'd like to receive the newsletter on.
           </FormHelperText>
           }
-          <Button colorScheme={'teal'} mt={2} type="submit" onClick={handleSubmit}>Count me in!</Button>
+          <Button colorScheme={'teal'} mt={2} type="submit" onClick={()=>{
+            if(isNotError){
+              handleSubmit();
+            } else {
+              console.log("Incorrect email");
+            }
+          }}>Count me in!</Button>
           </div>
       </FormControl>
     );
