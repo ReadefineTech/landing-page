@@ -41,7 +41,7 @@ const EmailRetriever = () => {
             Enter the email you'd like to receive the newsletter on.
           </FormHelperText>
           }
-          <Button colorScheme={'teal'} mt={4} type="submit" onClick={handleSubmit}>Count me in!</Button>
+          <Button colorScheme={'teal'} mt={2} type="submit" onClick={handleSubmit}>Count me in!</Button>
           </div>
       </FormControl>
     );

@@ -200,7 +200,7 @@
 
 @media only screen and (max-width: 1400px){
   .text-body{
-    font-size: x-large;
+    font-size: large;
   }
   .text-body h3{
     font-size: xx-large;
@@ -253,10 +253,11 @@
     margin-top: 5rem;
     margin-bottom: 2.5rem;
     width: 80%;
-    font-size: medium;
+    font-size: large;
   }
   .text-body h3{
-    font-size: x-large;
+    font-size: xx-large;
+    padding-bottom: 1rem;
   }
 }
 
@@ -314,4 +315,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 650px){
+  .flex-space-around{
+    flex-direction: column;
+  }
 }
