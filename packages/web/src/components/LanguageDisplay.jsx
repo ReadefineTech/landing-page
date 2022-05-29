@@ -101,7 +101,7 @@ const LanguageDisplay = ({displayLangs,langOptions}) => {
         </div>
         <div className="first-image-box">
           <div className="text-body">
-            <h3>Building the custom-tailored experiencet </h3>
+            <h3>Building the custom-tailored experience </h3>
             <p>
                 Readefine lets curious readers choose what languages to be included in the book and their level of difficulty. On another note, there is always
                 the possibility of putting the words you want to learn in the dictionary and the application will generate the contextual parts with the words you want learn.
