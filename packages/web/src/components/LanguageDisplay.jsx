@@ -1,6 +1,7 @@
-import React from "react";
+import {React, useEffect, useState} from "react";
 import { EventHandler } from "react";
-import iPhone from "../images/29.png";
+import openLibrary from "../images/28.png";
+import goals from "../images/31.png";
 import { useMediaQuery } from "react-responsive";
 import EmailRetriever from "./EmailRetriever";
 import { AiOutlineFacebook, AiOutlineLinkedin } from "react-icons/ai";
@@ -8,15 +9,49 @@ import { motion } from "framer-motion";
 import { Button } from "@chakra-ui/react";
 // import languages from "./LanguageObject";
 
+const buildPath= (s,suff) => {console.log(`/images/${s}_${suff}.png`); return `/images/${s}_${suff}.png`};
+
+const buildImage=(langSet)=>{
+  if(langSet.has('en'))
+  {
+    langSet.delete('en');
+    let [lang] = langSet;
+
+    return `en_${lang}`;
+  }
+  else if(langSet.has('de')){
+    langSet.delete('de');
+    let [lang] = langSet;
+
+    return `de_${lang}`;
+
+  }
+  else{
+    return 'fr_bg';
+  }
+};
+
 const LanguageDisplay = ({displayLangs,langOptions}) => {
+  const [cnt, setCnt] = useState(0);
   const isMobile = useMediaQuery({ query: "(max-width: 550px)" });
   let mobilePhone = isMobile ? "phone-image" : "none-none";
   let desktopPhone = isMobile ? "none-none" : "phone-image";
-  console.log(displayLangs())
+  let path = buildImage(displayLangs());
+  let paths = [buildPath(path,'snt'),buildPath(path,'pgp')];
+
+  useEffect(()=>{
+    const int = setInterval(()=>{
+      setCnt(cnt+1);
+    },1000);
+
+    return () => {clearInterval(int)};
+  },[]);
   // if(displayLangs().size==2)
   // {
   //   langOptions.clear();
   // }
+
+
   return (
     <div className="display-all">
       <motion.div
@@ -40,10 +75,10 @@ const LanguageDisplay = ({displayLangs,langOptions}) => {
               methodologies.
             </p>
           </div>
-          <img src={iPhone} className="phone-image"></img>
+          <img src={paths[cnt%2]} className="phone-image"></img>
         </div>
         <div className="first-image-box">
-          <img src={iPhone} className={desktopPhone}></img>
+          <img src={openLibrary} className={desktopPhone}></img>
           <div className="text-body">
             <h3>Open Source and licensed books in one library</h3>
             <p>
@@ -52,7 +87,7 @@ const LanguageDisplay = ({displayLangs,langOptions}) => {
               books available on as many different languages as possible.
             </p>
           </div>
-          <img src={iPhone} className={mobilePhone}></img>
+          <img src={openLibrary} className={mobilePhone}></img>
         </div>
         <div className="first-image-box">
           <div className="text-body">
@@ -62,17 +97,17 @@ const LanguageDisplay = ({displayLangs,langOptions}) => {
                 the possibility of putting the words you want to learn in the dictionary and the application will generate the contextual parts with the words you want learn.
             </p>
           </div>
-          <img src={iPhone} className="phone-image"></img>
+          <img src={buildPath(path, 'menu')} className="phone-image"></img>
         </div>
         <div className="first-image-box">
-          <img src={iPhone} className={desktopPhone}></img>
+          <img src={goals} className={desktopPhone}></img>
           <div className="text-body">
             <h3>Tracking goals</h3>
             <p>
             The goal metrics provide readers with a structured way to track and visualize their progress throughout their journey.
             </p>
           </div>
-          <img src={iPhone} className={mobilePhone}></img>
+          <img src={goals} className={mobilePhone}></img>
         </div>
       </motion.div>
       <div className="email-section">
